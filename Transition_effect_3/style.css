@@ -1,0 +1,161 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+}
+
+img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+#wrapper{
+
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+    margin: 10em auto;
+}
+
+.box{
+
+    width: 25%;
+    height: 400px;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+   
+    
+}
+
+.image{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+
+}
+
+.details{
+
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    z-index: 2;
+    transition: all 0.5s ease-in-out    ;
+}
+
+.box:hover,.details:hover,.btn:hover{
+
+    cursor: pointer;
+}
+
+
+.box:hover>.details,.details:hover{
+
+    top: 90%;
+   
+}
+
+.btn{
+
+    position: absolute;
+    top: 130%;
+    z-index: 3;
+    outline: none;
+    border: none;
+    background-color: #3caaa3;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: all 0.5s ease-in-out;
+    z-index: 4;
+    opacity: 0;
+    font-weight: bold;
+
+}
+.box:hover>.btn,.details:hover>.btn{
+
+    top: 115%;
+    opacity: 1;
+}
+
+.title{
+
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+
+
+
+
+.rotate{
+
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top:18%;
+    right: -1%;
+    opacity: 0;
+    transition: all 0.5s ease-in-out 0.2s;
+    z-index: 5;
+}
+.eye{
+
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 5%;
+    right: -1%;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    z-index: 5;
+    
+    
+}
+
+.box:hover>.eye,.box:hover>.rotate{
+
+    right: 5%;
+    opacity: 1;
+}
+

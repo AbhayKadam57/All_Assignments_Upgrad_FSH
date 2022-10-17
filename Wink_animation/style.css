@@ -1,0 +1,228 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.face{
+
+    width: 300px;
+    height: 300px;
+    background-color:#fcbf49;
+    border-radius: 50%;
+    margin: 2em;
+    position: relative;
+    animation: rotate 4s ease 2 alternate;
+}
+
+
+@keyframes rotate {
+
+    0%{
+
+        top: 0;
+        left: 0;
+        transform: rotate(0deg);
+
+    }
+    
+
+    100%{
+        top: 0;
+        left: 1200px;
+        transform: rotate(360deg);
+    }
+    
+}
+
+
+
+
+
+
+.eyebrow_1{
+
+    border-top:4px solid #000;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 70px;
+    height: 50px;
+    border-radius: 48%;
+    animation: eyeBrowBlink 0.5s ease 8s;
+
+}
+
+
+@keyframes eyeBrowBlink {
+
+    0%{
+
+        top: 20%;
+        border-radius: 48%;
+    }
+
+    25%{
+
+
+        top: 25%;
+        border-radius: 30%;
+    }
+    50%{
+
+
+        top: 30%;
+        border-radius: 30%;
+    }
+    75%{
+
+
+        top: 25%;
+        border-radius: 30%;
+    }
+    100%{
+
+        top: 20%;
+        border-radius: 48%;
+    }
+    
+}
+
+.eyebrow_2{
+
+    border-top:5px solid #000;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    width: 70px;
+    height: 50px;
+    border-radius: 48%;
+
+}
+
+.nose{
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 10px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #000;
+}
+
+.eye_1{
+
+    position: absolute;
+    top: 30%;
+    left:28%;
+    width: 20px;
+    height: 50px;
+    border:2px solid #000;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: wink 0.5s ease 8s;
+    
+}
+
+
+
+.eye_1:before{
+
+    position: absolute;
+    width: 20px;
+    height: 50px;
+    background-color: #000;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    animation: wink 0.5s ease 8s;
+}
+
+@keyframes wink {
+
+    0%{
+
+        height: 20px;
+        top: 38%;
+        background-color: transparent;
+        
+    }
+
+    25%{
+
+        height: 10px;
+        top: 36%;
+        background-color: transparent;
+    
+    }
+    50%{
+
+        height: 0px;
+        top: 40%;
+        background-color: transparent;
+    
+    }
+    75%{
+
+        height: 10px;
+        top: 36%;
+        background-color: transparent;
+    
+    }
+    100%{
+
+        height: 20px;
+        top: 38%;
+        background-color: transparent;
+    }
+    
+}
+.eye_2{
+
+    position: absolute;
+    top: 30%;
+    right:28%;
+    width: 20px;
+    height: 50px;
+    border:2px solid #000;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.eye_2:after{
+
+
+    position: absolute;
+    top: 50%;
+    right:50%;
+    transform: translateX(50%);
+    width: 20px;
+    height: 50px;
+    background-color:#000;
+    content: "";
+    border-radius: 50%;
+}
+
+.lips{
+
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 40px;
+    border-radius: 50%;
+    border-bottom: 2px solid #000;
+
+}

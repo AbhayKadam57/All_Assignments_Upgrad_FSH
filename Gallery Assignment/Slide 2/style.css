@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s linear;
+}
+
+
+#wrapper {
+
+    width: 80%;
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+#GalleryBox {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+   
+}
+
+
+
+.Image {
+
+    width: 48%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    margin:0.5rem;
+}
+
+
+.Image:hover img {
+
+    transform: scale(1.4);
+
+}
+
+.Image:before {
+
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    opacity: 0.5;
+    left: -100%;
+    top: 0;
+    transition: all 0.5s linear;
+    z-index: 1;
+
+}
+
+.Image:hover:before {
+
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+}
+
+.icons {
+
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: -50%;
+    transform: translate(50%, -50%);
+    display: flex;
+    gap: 40px;
+    color: #fff;
+    font-size: 60px;
+    transition: all 0.8s 0.5s ease-in-out;
+}
+
+.Image:hover>.icons {
+
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+}
+
+i {
+
+    cursor: pointer;
+    transition: all 0.8s ease-in-out;
+}
+
+i:nth-of-type(1):hover {
+
+
+    transform: rotate(360deg) scale(1.5);
+
+}
+
+i:nth-of-type(2):hover {
+
+
+    transform: rotate(360deg) scale(1.5);
+}

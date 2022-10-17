@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --triangle-after-color: #428019;
+    --triangle-before-color: #041437;
+    --overlay: #041437af;
+}
+
+body {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#wrapper {
+
+    width: 80%;
+    margin: 2em auto;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3em;
+}
+
+.box {
+
+    width: 32%;
+    height: 20em;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.box::before {
+
+    content: "";
+    position: absolute;
+    border-left: 120px solid transparent;
+    border-bottom: 100px solid transparent;
+    border-top: 120px solid var(--triangle-before-color);
+    top: 0%;
+    right: 0%;
+    z-index: 3;
+    transition: all 0.5s ease-in-out;
+}
+
+.box::after {
+
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+    background-color: var(--overlay);
+    opacity: 0;
+}
+
+
+.border {
+
+    position: absolute;
+    top: 9%;
+    left: 10%;
+    transform: translateX(-9%, 10%);
+    border: 2px solid var(--triangle-after-color);
+    width: 80%;
+    height: 80%;
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.5s ease-in-out 0.2s;
+
+}
+
+.icon {
+
+    position: absolute;
+    top: 0.5em;
+    right: 20px;
+    color: #fff;
+    font-size: 35px;
+    z-index: 3;
+    transition: all 0.5s ease-in-out;
+}
+
+.link {
+
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-49%, -50%);
+    font-size: 32px;
+    color: var(--triangle-after-color);
+    z-index: 3;
+    opacity: 0;
+    transition: all 0.5s ease-in-out 0.2s;
+}
+
+
+.box:hover>.icon {
+
+    top: 0.6em;
+    right: 0.8em;
+}
+
+.box:hover>.link {
+
+    opacity: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box:hover {
+
+    cursor: pointer;
+}
+
+.box:hover::before {
+
+    border-left: 130px solid transparent;
+    border-bottom: 100px solid transparent;
+    border-top: 130px solid var(--triangle-after-color);
+}
+
+.box:hover>.border {
+
+    opacity: 1;
+    top: 10%;
+    left: 10%;
+    transform: translateX(-10%, -10%);
+}
+
+.box:hover:after {
+
+
+    top: 0;
+    opacity: 1;
+}

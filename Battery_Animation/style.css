@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper{
+
+    height: 100vh;
+    background-color:#FFEBCD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#box{
+
+    width: 50%;
+    height: 300px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10%;
+}
+
+#battery_body{
+
+    width: 250px;
+    height: 95px;
+    border: 5px solid  yellow;
+    border-radius: 8px;
+    position: relative;
+    
+    
+}
+
+#battery_body::after{
+
+
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10.5%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 20px;
+    border: 5px solid yellow;
+    border-radius: 8px;
+}
+
+
+.charging{
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: yellow;
+    border: 5px solid #fff;
+    border-radius: 8px;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: charging 5s ease 1s infinite forwards normal;
+
+}
+
+
+
+
+@keyframes charging {
+
+    0%{
+
+        width: 0%;
+      
+    }
+    20%{
+
+        width: 25%;
+        
+    }
+    30%{
+
+        width: 25%;
+        
+    }
+    40%{
+
+        width: 50%;
+        
+    }
+    50%{
+
+        width: 50%;
+        
+    }
+    60%{
+
+        width: 75%;
+        
+    }
+
+    70%{
+
+        width: 75%;
+        
+    }
+    90%{
+
+        width: 75%;
+        
+    }
+    100%{
+
+        width: 100%;
+       
+    }
+}
+
+
+#btn{
+
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #265B62;
+    color: #fff;
+    cursor: pointer;
+    animation: dancing 0.5s ease infinite forwards alternate;
+   
+
+}
+
+@keyframes dancing {
+
+    0%{
+
+        transform: skew(0deg, 4deg);
+    }
+
+    100%{
+
+        transform: skew(0deg, -4deg);
+    }
+    
+}
