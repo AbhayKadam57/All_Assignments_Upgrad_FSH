@@ -63,6 +63,8 @@ img {
     border-radius: 0.3em;
     justify-content: center;
     padding: 0 0.7em;
+    padding-top: 1.5em;
+    padding-bottom: 0.8em;
     transition: all 0.8s ease-in;
     font-size: 0.8em;
 
@@ -286,6 +288,9 @@ footer {
     flex-direction: column;
     gap: 5em;
 }
+
+
+
 
 @media screen and (max-width:1081px) {
 
