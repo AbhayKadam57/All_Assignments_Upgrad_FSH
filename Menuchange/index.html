@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Change</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="center">
+        <div id="menubar">
+          <a class="active link" id="react">React JS</a>
+          <a id="nodejs">Node JS</a>
+          <a id="mongo">Mongo</a>
+          <a id="vuejs">Vue JS</a>
+        </div>
+        <div class="content-box">
+          <div class="content active" name="react">
+            <h2>REACT - Reusable components</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Doloremque omnis maxime iure illo eos pariatur ipsam nihil sed,
+              molestias ipsum dignissimos suscipit nulla in necessitatibus
+              delectus molestiae quas velit debitis.
+            </p>
+          </div>
+          <div class="content" name="nodejs">
+            <h2>NODE - GET JS out of browsers</h2>
+            <p>
+              it is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters,
+            </p>
+          </div>
+          <div class="content" name="mongo">
+            <h2>MONGO - Tableless DB</h2>
+            <p>
+              Contrary to popular belief, Lorem Ipsum is not simply random text.
+              It has roots in a piece of classical Latin literature from 45 BC,
+              making it over 2000 years old. Richard McClintock, a Latin
+              professor at Hampden-Sydney College in Virginia
+            </p>
+          </div>
+          <div class="content" name="vuejs">
+            <h2>VUE - No idea about it</h2>
+            <p>
+              But I must explain to you how all this mistaken idea of denouncing
+              pleasure and praising pain was born and I will give you a complete
+              account of the system, and expound the actual teachings of the
+              great explorer of the truth,
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const links = document.querySelectorAll("a");
+
+      const content = document.querySelectorAll(".content");
+
+      links.forEach((link) => {
+        link.onclick = (e) => {
+          e.preventDefault;
+          const head = e.target.id;
+
+          console.log(e.target);
+
+          links.forEach((link) => {
+            link.classList.remove("active");
+          });
+
+          content.forEach((content) => {
+            const name = content.getAttribute("name");
+
+            if (head === name) {
+              content.classList.add("active");
+              e.target.classList.add("active");
+            } else {
+              content.classList.remove("active");
+            }
+          });
+        };
+      });
+    </script>
+  </body>
+</html>

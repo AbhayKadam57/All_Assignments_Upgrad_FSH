@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input class="button" type="radio" id="cricket" name="sports" />
+    <label for="cricket">Cricket</label>
+    <input class="button" type="radio" id="basketball" name="sports" />
+    <label for="basketball">Basketball</label>
+    <input class="button" type="radio" id="football" name="sports" />
+    <label for="football">Football</label><br />
+
+    <input
+      class="inputs"
+      type="text"
+      placeholder="Enter something here"
+    /><br />
+    <input
+      class="inputs"
+      type="text"
+      placeholder="Enter something here"
+    /><br />
+    <input
+      class="inputs"
+      type="text"
+      placeholder="Enter something here"
+    /><br />
+    <input
+      class="inputs"
+      type="text"
+      placeholder="Enter something here"
+    /><br />
+
+    <script>
+      const buttons = document.querySelectorAll(".button");
+
+      buttons.forEach((btn) => {
+        btn.onclick = (e) => {
+          const id = e.target.id;
+          const inputs = document.querySelectorAll(".inputs");
+
+          console.log(id);
+
+          if (id === "basketball") {
+            inputs.forEach((input) => {
+              input.disabled = false;
+            });
+          } else {
+            inputs.forEach((input) => {
+              input.disabled = true;
+            });
+          }
+        };
+      });
+    </script>
+  </body>
+</html>

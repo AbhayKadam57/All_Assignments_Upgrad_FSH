@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aleo:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="center">
+        <div class="Box">
+          <div class="heading">
+            <h1>Accordion Heading 1</h1>
+            <div class="icons">
+              <i class="fa-solid fa-circle-plus icon"></i>
+            </div>
+          </div>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ipsam
+            doloribus dolor cum expedita minus commodi similique eveniet facilis
+            soluta, sequi, dignissimos sed, unde nihil ex incidunt voluptatum?
+            Voluptatibus, sed? Ipsa, corporis vitae similique ipsam deserunt
+            earum exercitationem cupiditate rem quisquam recusandae repellendus
+          </p>
+        </div>
+
+        <div class="Box">
+          <div class="heading">
+            <h1>Accordion Heading 2</h1>
+            <div class="icons">
+              <i class="fa-solid fa-circle-plus icon"></i>
+            </div>
+          </div>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ipsam
+            doloribus dolor cum expedita minus commodi similique eveniet facilis
+            soluta, sequi, dignissimos sed, unde nihil ex incidunt voluptatum?
+            Voluptatibus, sed? Ipsa, corporis vitae similique ipsam deserunt
+            earum exercitationem cupiditate rem quisquam recusandae repellendus
+          </p>
+        </div>
+        <div class="Box">
+          <div class="heading">
+            <h1>Accordion Heading 3</h1>
+            <div class="icons">
+              <i class="fa-solid fa-circle-plus icon"></i>
+            </div>
+          </div>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ipsam
+            doloribus dolor cum expedita minus commodi similique eveniet facilis
+            soluta, sequi, dignissimos sed, unde nihil ex incidunt voluptatum?
+            Voluptatibus, sed? Ipsa, corporis vitae similique ipsam deserunt
+            earum exercitationem cupiditate rem quisquam recusandae repellendus
+          </p>
+        </div>
+        <div class="Box">
+          <div class="heading">
+            <h1>Accordion Heading 4</h1>
+            <div class="icons">
+              <i class="fa-solid fa-circle-plus icon"></i>
+            </div>
+          </div>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ipsam
+            doloribus dolor cum expedita minus commodi similique eveniet facilis
+            soluta, sequi, dignissimos sed, unde nihil ex incidunt voluptatum?
+            Voluptatibus, sed? Ipsa, corporis vitae similique ipsam deserunt
+            earum exercitationem cupiditate rem quisquam recusandae repellendus
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const icons = document.querySelectorAll(".icon");
+
+      const para = document.querySelectorAll("p");
+
+      icons.forEach((icon) => {
+        icon.onclick = (e) => {
+          const paragraph =
+            e.target.parentElement.parentElement.nextElementSibling;
+          console.log(paragraph);
+
+          para.forEach((para) => {
+            if (paragraph !== para) {
+              para.classList.remove("active");
+              para.parentElement.firstElementChild.lastElementChild.firstElementChild.classList.remove(
+                "fa-circle-minus"
+              );
+              para.parentElement.firstElementChild.lastElementChild.firstElementChild.classList.add(
+                "fa-circle-plus"
+              );
+            }
+          });
+
+          if (e.target.classList.contains("fa-circle-plus")) {
+            paragraph.classList.add("active");
+            e.target.classList.remove("fa-circle-plus");
+            e.target.classList.add("fa-circle-minus");
+          } else if (e.target.classList.contains("fa-circle-minus")) {
+            paragraph.classList.remove("active");
+            e.target.classList.add("fa-circle-plus");
+            e.target.classList.remove("fa-circle-minus");
+          }
+        };
+      });
+    </script>
+  </body>
+</html>

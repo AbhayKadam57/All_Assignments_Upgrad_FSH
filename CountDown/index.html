@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Year CountDown</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="center">
+        <div class="box">
+          <h1 id="days"></h1>
+          <div class="bottom">
+            <p>Days</p>
+          </div>
+        </div>
+        <div class="box">
+          <h1 id="hours"></h1>
+          <div class="bottom">
+            <p>Hours</p>
+          </div>
+        </div>
+        <div class="box">
+          <h1 id="minutes"></h1>
+          <div class="bottom">
+            <p>Minutes</p>
+          </div>
+        </div>
+        <div class="box">
+          <h1 id="seconds"></h1>
+          <div class="bottom">
+            <p>Seconds</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const day = document.querySelector("#days");
+      const hours = document.querySelector("#hours");
+      const Mins = document.querySelector("#minutes");
+      const secs = document.querySelector("#seconds");
+
+      const CountDown = () => {
+        let x = setInterval(() => {
+          let today = new Date();
+
+          let end = new Date("jan 1 , 2023");
+
+          let diff = end - today;
+
+          let Day = diff / (1000 * 60 * 60 * 24);
+
+          let Hours = (Day - parseInt(Day)) * 24;
+
+          let mins = (Hours - parseInt(Hours)) * 60;
+
+          let Secs = (mins - parseInt(mins)) * 60;
+
+          console.log(Day);
+          console.log(Hours);
+          console.log(mins);
+          console.log(Secs);
+
+          if (Secs < 10) {
+            secs.innerHTML = "0" + parseInt(Secs);
+          } else {
+            secs.innerHTML = parseInt(Secs);
+          }
+
+          if (mins < 10) {
+            Mins.innerHTML = "0" + parseInt(mins);
+          } else {
+            Mins.innerHTML = parseInt(mins);
+          }
+
+          if (Hours < 10) {
+            hours.innerHTML = "0" + parseInt(Hours);
+          } else {
+            hours.innerHTML = parseInt(Hours);
+          }
+
+          if (Day < 10) {
+            day.innerHTML = "0" + parseInt(Day);
+          } else {
+            day.innerHTML = parseInt(Day);
+          }
+        }, 1000);
+      };
+
+      CountDown();
+    </script>
+  </body>
+</html>

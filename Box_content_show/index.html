@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Content</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sono:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="box">
+        <div class="heading">
+          <h2>Heading</h2>
+          <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="content">
+          <div class="img">
+            <p>js is awesome</p>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+            minus maxime officiis rem praesentium doloribus nihil magnam
+            sapiente at reprehenderit architecto esse voluptatum ab iste
+            eligendi voluptate porro, quis quod.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+            minus maxime officiis rem praesentium doloribus nihil magnam
+            sapiente at reprehenderit architecto esse voluptatum ab iste
+            eligendi voluptate porro, quis quod.
+          </p>
+        </div>
+        <a href="">Show</a>
+      </div>
+      <div class="box">
+        <div class="heading">
+          <h2>Heading</h2>
+          <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="content">
+          <div class="img">
+            <p>js is awesome</p>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+            minus maxime officiis rem praesentium doloribus nihil magnam
+            sapiente at reprehenderit architecto esse voluptatum ab iste
+            eligendi voluptate porro, quis quod.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+            minus maxime officiis rem praesentium doloribus nihil magnam
+            sapiente at reprehenderit architecto esse voluptatum ab iste
+            eligendi voluptate porro, quis quod.
+          </p>
+        </div>
+        <a href="">Show</a>
+      </div>
+      <div class="box">
+        <div class="heading">
+          <h2>Heading</h2>
+          <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="content">
+          <div class="img">
+            <p>js is awesome</p>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+            minus maxime officiis rem praesentium doloribus nihil magnam
+            sapiente at reprehenderit architecto esse voluptatum ab iste
+            eligendi voluptate porro, quis quod.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+            minus maxime officiis rem praesentium doloribus nihil magnam
+            sapiente at reprehenderit architecto esse voluptatum ab iste
+            eligendi voluptate porro, quis quod.
+          </p>
+        </div>
+        <a href="">Show</a>
+      </div>
+      <div class="box">
+        <div class="heading">
+          <h2>Heading</h2>
+          <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="content">
+          <div class="img">
+            <p>js is awesome</p>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+            minus maxime officiis rem praesentium doloribus nihil magnam
+            sapiente at reprehenderit architecto esse voluptatum ab iste
+            eligendi voluptate porro, quis quod.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+            minus maxime officiis rem praesentium doloribus nih il magnam
+            sapiente at reprehenderit architecto esse voluptatum ab iste
+            eligendi voluptate porro, quis quod.
+          </p>
+        </div>
+        <a href="">Show</a>
+      </div>
+    </div>
+    <script>
+      const icons = document.querySelectorAll("i");
+
+      const show = document.querySelectorAll("a");
+
+      icons.forEach((icon) => {
+        icon.onclick = (e) => {
+          e.target.parentElement.nextElementSibling.style.display = "none";
+          e.target.parentElement.nextElementSibling.nextElementSibling.style.display =
+            "block";
+          e.target.classList.add("fa-minus");
+          e.target.classList.remove("fa-plus");
+        };
+      });
+
+      show.forEach((show) => {
+        show.onclick = (e) => {
+          e.preventDefault();
+
+          e.target.previousElementSibling.style.display = "block";
+          e.target.style.display = "none";
+
+          e.target.parentElement.firstElementChild.lastElementChild.classList.remove(
+            "fa-minus"
+          );
+          e.target.parentElement.firstElementChild.lastElementChild.classList.add(
+            "fa-plus"
+          );
+        };
+      });
+    </script>
+  </body>
+</html>
