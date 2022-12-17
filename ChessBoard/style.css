@@ -11,20 +11,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 30px;
 }
 
 .white {
 
     width: 150px;
     height: 150px;
-    background-color: #fff;
+    background-color: #a8a8a8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .black {
 
     width: 150px;
     height: 150px;
-    background-color: #000;
+    background-color: #878787;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #Board {
@@ -33,4 +40,24 @@
     display: flex;
     flex-wrap: wrap;
 
+}
+
+.piece {
+
+    background-position: center;
+    background-size: cover;
+    font-size: 4.8em;
+    cursor: pointer;
+
+
+}
+
+.W {
+
+    color: #fff;
+}
+
+.B {
+
+    color: #000;
 }
